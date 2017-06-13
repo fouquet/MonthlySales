@@ -1,0 +1,61 @@
+ [{
+		"title": "October 2016",
+		"firstDay": "2016-09-25",
+		"lastDay": "2016-10-29"
+  },
+  {
+		"title": "November 2016",
+		"firstDay": "2016-10-30",
+		"lastDay": "2016-11-26"
+  },
+  {
+		"title": "December 2016",
+		"firstDay": "2016-11-27",
+		"lastDay": "2016-12-31"
+  },
+  {
+		"title": "January 2017",
+		"firstDay": "2017-01-01",
+		"lastDay": "2017-02-04"
+  },
+  {
+		"title": "February 2017",
+		"firstDay": "2017-02-05",
+		"lastDay": "2017-03-04"
+  },
+  {
+		"title": "March 2017",
+		"firstDay": "2017-03-05",
+		"lastDay": "2017-04-01"
+  },
+  {
+		"title": "April 2017",
+		"firstDay": "2017-04-02",
+		"lastDay": "2017-05-06"
+  },
+  {
+		"title": "May 2017",
+		"firstDay": "2017-05-07",
+		"lastDay": "2017-06-03"
+  },
+  {
+		"title": "June 2017",
+		"firstDay": "2017-06-04",
+		"lastDay": "2017-07-01"
+  },
+  {
+		"title": "July 2017",
+		"firstDay": "2017-07-02",
+		"lastDay": "2017-08-05"
+  },
+  {
+		"title": "August 2017",
+		"firstDay": "2017-08-06",
+		"lastDay": "2017-09-02"
+  },
+  {
+		"title": "September 2017",
+		"firstDay": "2017-09-03",
+		"lastDay": "2017-09-30"
+  }
+  ]
