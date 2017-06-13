@@ -2,7 +2,6 @@
 ### A revenue overview for developers, based on Apple's Fiscal Calendar
 
 ![Screenshot 1](https://raw.githubusercontent.com/fouquet/MonthlySales/master/Screenshots/monthlySales-1.png)
-
 ![Screenshot 2](https://raw.githubusercontent.com/fouquet/MonthlySales/master/Screenshots/monthlySales-2.png)
 
 If you have one or more paid apps on the Apple App Store(s), you know that Apple uses a different calendar for bookkeeping than the actual calendar months. So for example for Apple, the month of March 2017 isn't from March 1 to March 31, it's from March 5 until (including) April 1. 
