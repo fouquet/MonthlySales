@@ -1,5 +1,9 @@
-#MonthlySales
-###A revenue overview for developers, based on Apple's Fiscal Calendar
+# MonthlySales
+### A revenue overview for developers, based on Apple's Fiscal Calendar
+
+![Screenshot 1](https://raw.githubusercontent.com/fouquet/MonthlySales/master/Screenshots/monthlySales-1.png)
+
+![Screenshot 2]https://raw.githubusercontent.com/fouquet/MonthlySales/master/Screenshots/monthlySales-2.png)
 
 If you have one or more paid apps on the Apple App Store(s), you know that Apple uses a different calendar for bookkeeping than the actual calendar months. So for example for Apple, the month of March 2017 isn't from March 1 to March 31, it's from March 5 until (including) April 1. 
 
@@ -9,7 +13,7 @@ MonthlySales is an iOS app created to make that easier. It's designed to give yo
 
 **Note**: MonthlySales uses the AppFigures API and requires an AppFigures account. I think free accounts work, but don't quote me on that.
 
-##Installation
+## Installation
 
 The installation is very easy to do. Just clone this repo, open the project in Xcode, and select the file **ApiMethods.swift**. Now go to the [AppFigures API clients section](https://appfigures.com/developers/keys) and create a new client (you can call it whatever you like). Make sure to set all permissions to *read*. After clicking "Make me an app", write down the *client key*.
 
@@ -27,7 +31,7 @@ In the file **ApiMethods.swift**, at the top of the class `ApiMethods`, there ar
 
 Now you can run the app on your favorite Simulator, device or whatever. It should display your sales based on the fiscal calendar.
 
-##Things to know
+## Things to know
 
 MonthlySales will always display all revenue for all products tracked in AppFigures, including IAP. It will not individually show results depending on products, country or your mom. It's intentionally kept simple to just show revenue for a given fiscal calendar month, that's it.
 
@@ -41,49 +45,49 @@ If a date is yesterday and the revenue is 0, it is kept from the "days remaining
 
 The currency symbol ($, €, £ etc.) is loaded once at start and after that never refreshed automatically. If for some weird reason the currency setting of the AppFigures account changes, you can refresh this setting manually on the settings view.
 
-##Requirements
+## Requirements
 
 MonthlySales is written in Swift 3.1 and testet with iOS 10 and designed for the iPhone. It *should* run in iOS 9 though. No idea. Who still uses iOS 9?
 
 The project itself has no external dependencies, except for UIKit and Foundation (duh).
 
-##Possible Questions
+## Possible Questions
 
-###Why use the AppFigures API? Doesn't iTunes Connect report the sales directly?
+### Why use the AppFigures API? Doesn't iTunes Connect report the sales directly?
 
 Yes, but there's no official API to use. This means web scraping and every time something changes on Apple's part, I need to adjust. No thanks.
 
 Should Apple at some point decide to add an API, I'm happy to use that instead.
 
-###Why Basic Authentication?
+### Why Basic Authentication?
 
 MonthlySales uses HTTP AuthBasic to authenticate with AppFigures. There's really no point in implementing OAuth if you only use it with your own account.
 
-###Can you automatically sync the AppFigures data?
+### Can you automatically sync the AppFigures data?
 
 Unfortuntely, I can't. The API doesn't offer this functionality. If you're tired of manually triggering a data sync, you're forced to get an AppFigures Premium account :(
 
-###The AppFigures sales dashboard shows a slightly different revenue amount for the given period
+### The AppFigures sales dashboard shows a slightly different revenue amount for the given period
 
 I've noticed this too. Sometimes the amount displayed in the AppFigures web frontend or the app is off by a few cents. The amount calculated by the app is correct, however, at least given the data coming from the AppFigures API. I can only assume that the web frontend does some funky rounding. It's in the ballpark though, so I don't think that's an issue.
 
-###I need feature X to use this.
+### I need feature X to use this.
 
 Feel free to fork the repo, add your feature and create a pull request. I'm always open to new features.
 
-###Who designed this *horrible* icon? And that name sucks.
+### Who designed this *horrible* icon? And that name sucks.
 
 I did, and I know. Don't judge me.
 
-###Are these your revenue numbers in the screenshot?
+### Are these your revenue numbers in the screenshot?
 
 I wish.
 
-###Do you have a tip jar or something? I want to pay you.
+### Do you have a tip jar or something? I want to pay you.
 
 I don't, but I have [some apps](https://fouquet.me/apps) you can buy.
 
-##Things to do
+## Things to do
 
 Here's a couple of things that still need to be done:
 
@@ -91,7 +95,11 @@ Here's a couple of things that still need to be done:
 * A couple of unit tests are missing
 * Actual error alerts if something goes wrong
 
-##License
+## Contact
+
+Follow me on Twitter at @renefouquet or read my blog at [fouquet.me](https://fouquet.me)!
+
+## License
 
 **MIT License**
 
