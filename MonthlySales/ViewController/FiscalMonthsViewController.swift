@@ -15,7 +15,7 @@ protocol FiscalMonthsViewControllerDelegate: class {
 class FiscalMonthsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, DependencyInjected {
     @IBOutlet var tableView: UITableView!
 
-    var dependencies: Depenencies!
+    var dependencies: Dependencies!
     
     weak var delegate: FiscalMonthsViewControllerDelegate?
 

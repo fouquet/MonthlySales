@@ -18,7 +18,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     private let refreshControl = UIRefreshControl()
     
-    var dependencies: Depenencies!
+    var dependencies: Dependencies!
     
     private var sales = [Sale]()
     private var selectedFiscalMonth: FiscalMonth!

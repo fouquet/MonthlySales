@@ -16,7 +16,7 @@ class SettingsViewController: UIViewController, DependencyInjected {
     @IBOutlet var userNameLabel: UILabel!
     @IBOutlet var currencyLabel: UILabel!
 
-    var dependencies: Depenencies!
+    var dependencies: Dependencies!
     
     weak var delegate: SettingsViewControllerDelegate?
 

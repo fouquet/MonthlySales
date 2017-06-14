@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let formatters = Formatters()
         let fiscalMonths = loadFiscalData(formatters: formatters)
         
-        let dependencies = Depenencies(apiMethods: ApiMethods(formatters: formatters), apiParser: ApiParser(formatters: formatters), formatters: formatters, appSettings: AppSettings(), calendar: InternalCalendar(), fiscalMonths: fiscalMonths)
+        let dependencies = Dependencies(apiMethods: ApiMethods(formatters: formatters), apiParser: ApiParser(formatters: formatters), formatters: formatters, appSettings: AppSettings(), calendar: InternalCalendar(), fiscalMonths: fiscalMonths)
         
         /* Dependency injection */
         if let navController = window?.rootViewController as? UINavigationController, var mainViewController = navController.topViewController as? MainViewController {

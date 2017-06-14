@@ -9,16 +9,16 @@
 import UIKit
 
 protocol DependencyInjected {
-    var dependencies: Depenencies! { get set }
+    var dependencies: Dependencies! { get set }
 }
 
 extension DependencyInjected {
-    mutating func setDependencies(_ dependencies: Depenencies) {
+    mutating func setDependencies(_ dependencies: Dependencies) {
         self.dependencies = dependencies
     }
 }
 
-final class Depenencies {
+final class Dependencies {
     let fiscalMonths:[FiscalMonth]
     let formatters:FormattersProtocol
     let apiMethods:ApiMethodsProtocol
