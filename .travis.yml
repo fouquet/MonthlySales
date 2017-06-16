@@ -1,0 +1,20 @@
+language: objective-c
+osx_image: xcode8.3
+xcode_project: MonthlySales.xcodeproj
+xcode_scheme: MonthlySales
+xcode_sdk: iphonesimulator9.3
+before_install:
+  - gem install xcpretty-travis-formatter
+  - carthage bootstrap --platform iOS
+
+script: xcodebuild
+  -project  MonthlySales.xcodeproj
+  -scheme "MonthlySales"
+  -sdk iphonesimulator
+  -destination 'platform=iOS Simulator,name=iPhone 7'
+  -enableCodeCoverage YES 
+  test
+ | xcpretty -f `xcpretty-travis-formatter`
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash) -J 'MonthlySales' -J 'MonthlySalesTests'

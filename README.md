@@ -1,6 +1,10 @@
 # MonthlySales
 ### A revenue overview for developers, based on Apple's Fiscal Calendar
 
+![TravisCI](https://api.travis-ci.org/fouquet/MonthlySales.svg?branch=master)
+![license](https://img.shields.io/github/license/mashape/apistatus.svg)
+![platform](https://img.shields.io/cocoapods/p/PinLayout.svg?style=flat)
+
 ![Screenshot 1](https://raw.githubusercontent.com/fouquet/MonthlySales/master/Screenshots/monthlySales-1.png)
 ![Screenshot 2](https://raw.githubusercontent.com/fouquet/MonthlySales/master/Screenshots/monthlySales-2.png)
 
