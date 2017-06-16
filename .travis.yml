@@ -5,7 +5,6 @@ xcode_scheme: MonthlySales
 xcode_sdk: iphonesimulator9.3
 before_install:
   - gem install xcpretty-travis-formatter
-  - carthage bootstrap --platform iOS
 
 script: xcodebuild
   -project  MonthlySales.xcodeproj
