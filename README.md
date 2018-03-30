@@ -96,8 +96,7 @@ Here's a couple of things that still need to be done:
 
 * UI Tests
 * A couple of unit tests are missing
-
-~~* Actual error alerts if something goes wrong~~ (done 30-Mar-2018)
+* ~~Actual error alerts if something goes wrong~~ (done 30-Mar-2018)
 
 ## Contact
 
