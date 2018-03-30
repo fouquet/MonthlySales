@@ -46,12 +46,18 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
 
             toggleRefreshData(showRefreshControl: true)
         } else {
-            dependencies.apiMethods.fetchUserInfo(completion: { [weak self] (returnValue: (user: String?, currencySymbol: String?)) in
+            do {
+                try dependencies.apiMethods.fetchUserInfo(completion: { [weak self] (returnValue: (user: String?, currencySymbol: String?)) in
                 guard let user = returnValue.user, let currency = returnValue.currencySymbol else { return }
                 self?.dependencies.appSettings.setString(user, for: .username)
                 self?.dependencies.appSettings.setString(currency, for: .currencySymbol)
                 self?.refreshData()
-            })
+                })
+            } catch let error as ApiError {
+                showErrorAlert(message: error.errorMessage())
+            } catch {
+                print("Unknown error: \(error.localizedDescription)")
+            }
         }
     }
 
@@ -60,7 +66,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.addSubview(refreshControl)
     }
 
-    func refreshData() {
+    @objc func refreshData() {
         toggleRefreshData(showRefreshControl: false)
     }
 
@@ -70,22 +76,34 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             tableView.setContentOffset(CGPoint(x: 0, y: tableView.contentOffset.y - refreshControl.frame.size.height), animated: true)
         }
 
-        dependencies.apiMethods.getSalesDataFor(startDate: selectedFiscalMonth.firstDay, endDate: selectedFiscalMonth.lastDay) { [weak self] (data: Data?) in
-            guard let data = data, let sales = self?.dependencies.apiParser.parseSalesData(data) else {
-                DispatchQueue.main.async {
-                    self?.refreshControl.endRefreshing()
-                    self?.tableView.reloadData()
-                    self?.setInfoLabels()
+        do {
+            try dependencies.apiMethods.getSalesDataFor(startDate: selectedFiscalMonth.firstDay, endDate: selectedFiscalMonth.lastDay) { [weak self] (data: Data?) in
+                do {
+                    guard let data = data, let sales = try self?.dependencies.apiParser.parseSalesData(data) else {
+                        DispatchQueue.main.async {
+                            self?.refreshControl.endRefreshing()
+                            self?.tableView.reloadData()
+                            self?.setInfoLabels()
+                        }
+                        return
+                    }
+                    
+                    DispatchQueue.main.async {
+                        self?.sales = sales
+                        self?.refreshControl.endRefreshing()
+                        self?.tableView.reloadData()
+                        self?.setInfoLabels()
+                    }
+                } catch let error as ApiError {
+                    self?.showErrorAlert(message: error.errorMessage())
+                } catch {
+                    print("Unknown error: \(error.localizedDescription)")
                 }
-                return
             }
-            
-            DispatchQueue.main.async {
-                self?.sales = sales
-                self?.refreshControl.endRefreshing()
-                self?.tableView.reloadData()
-                self?.setInfoLabels()
-            }
+        } catch let error as ApiError {
+            showErrorAlert(message: error.errorMessage())
+        } catch {
+            print("Unknown error: \(error.localizedDescription)")
         }
     }
 

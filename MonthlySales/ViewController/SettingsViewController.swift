@@ -41,12 +41,18 @@ class SettingsViewController: UIViewController, DependencyInjected {
     }
 
     @IBAction func refreshAccountData() {
-        dependencies.apiMethods.fetchUserInfo(completion: { [weak self] (returnValue: (user: String?, currencySymbol: String?)) in
-            guard let user = returnValue.user, let currency = returnValue.currencySymbol else { return }
-            self?.dependencies.appSettings.setString(user, for: .username)
-            self?.dependencies.appSettings.setString(currency, for: .currencySymbol)
-            self?.setLabels()
-            self?.delegate?.refreshData()
-        })
+        do {
+            try dependencies.apiMethods.fetchUserInfo(completion: { [weak self] (returnValue: (user: String?, currencySymbol: String?)) in
+                guard let user = returnValue.user, let currency = returnValue.currencySymbol else { return }
+                self?.dependencies.appSettings.setString(user, for: .username)
+                self?.dependencies.appSettings.setString(currency, for: .currencySymbol)
+                self?.setLabels()
+                self?.delegate?.refreshData()
+            })
+        } catch let error as ApiError {
+            showErrorAlert(message: error.errorMessage())
+        } catch {
+            print("Unknown error: \(error.localizedDescription)")
+        }
     }
 }

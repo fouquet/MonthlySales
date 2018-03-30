@@ -8,14 +8,30 @@
 
 import Foundation
 
+enum ApiError: Error {
+    case emptyResult
+    case noInternetConnection
+    case timeout
+}
+
+extension ApiError {
+    func errorMessage() -> String {
+        switch self {
+            case .emptyResult: return "The server returned with an empty response."
+            case .noInternetConnection: return "There is no Internet connection."
+            case .timeout: return "Timeout while waiting for a server response."
+        }
+    }
+}
+
 protocol ApiMethodsProtocol {
-    func getSalesDataFor(startDate: Date, endDate: Date, completion: @escaping (Data?) -> Void)
-    func fetchUserInfo(completion: @escaping ((user: String?, currencySymbol: String?)) -> Void)
+    func getSalesDataFor(startDate: Date, endDate: Date, completion: @escaping (Data?) -> Void) throws
+    func fetchUserInfo(completion: @escaping ((user: String?, currencySymbol: String?)) -> Void) throws
     init(formatters: FormattersProtocol)
 }
 
 protocol ApiParserProtocol {
-    func parseSalesData(_ data: Data) -> [Sale]
+    func parseSalesData(_ data: Data) throws -> [Sale]
     init(formatters: FormattersProtocol)
 }
 
@@ -62,7 +78,7 @@ final class ApiMethods: ApiMethodsProtocol {
         }
     }
 
-    func getSalesDataFor(startDate: Date, endDate: Date, completion: @escaping (Data?) -> Void) {
+    func getSalesDataFor(startDate: Date, endDate: Date, completion: @escaping (Data?) -> Void) throws {
         let session = URLSession(configuration: URLSessionConfiguration.default, delegate: nil, delegateQueue: nil)
 
         guard var URL = URL(string: apiBaseURL + "/v2/reports/sales") else { return }
