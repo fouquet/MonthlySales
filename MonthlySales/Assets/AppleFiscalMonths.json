@@ -1,61 +1,61 @@
  [{
-		"title": "October 2017",
-		"firstDay": "2017-10-01",
-		"lastDay": "2017-11-04"
+		"title": "October 2018",
+		"firstDay": "2018-09-30",
+		"lastDay": "2018-11-03"
   },
   {
-		"title": "November 2017",
-		"firstDay": "2017-11-05",
-		"lastDay": "2017-12-02"
+		"title": "November 2018",
+		"firstDay": "2018-11-04",
+		"lastDay": "2018-12-01"
   },
   {
-		"title": "December 2017",
-		"firstDay": "2017-12-03",
-		"lastDay": "2017-12-30"
+		"title": "December 2018",
+		"firstDay": "2018-12-02",
+		"lastDay": "2018-12-29"
   },
   {
-		"title": "January 2018",
-		"firstDay": "2017-12-31",
-		"lastDay": "2018-02-03"
+		"title": "January 2019",
+		"firstDay": "2018-12-30",
+		"lastDay": "2019-02-02"
   },
   {
-		"title": "February 2018",
-		"firstDay": "2018-02-04",
-		"lastDay": "2018-03-03"
+		"title": "February 2019",
+		"firstDay": "2019-02-03",
+		"lastDay": "2019-03-02"
   },
   {
-		"title": "March 2018",
-		"firstDay": "2018-03-04",
-		"lastDay": "2018-03-31"
+		"title": "March 2019",
+		"firstDay": "2019-03-03",
+		"lastDay": "2019-03-30"
   },
   {
-		"title": "April 2018",
-		"firstDay": "2018-04-01",
-		"lastDay": "2018-05-05"
+		"title": "April 2019",
+		"firstDay": "2019-03-31",
+		"lastDay": "2019-05-04"
   },
   {
-		"title": "May 2018",
-		"firstDay": "2018-05-06",
-		"lastDay": "2018-06-02"
+		"title": "May 2019",
+		"firstDay": "2019-05-05",
+		"lastDay": "2019-06-01"
   },
   {
-		"title": "June 2018",
-		"firstDay": "2018-06-03",
-		"lastDay": "2018-06-30"
+		"title": "June 2019",
+		"firstDay": "2019-06-02",
+		"lastDay": "2019-06-29"
   },
   {
-		"title": "July 2018",
-		"firstDay": "2018-07-01",
-		"lastDay": "2018-08-04"
+		"title": "July 2019",
+		"firstDay": "2019-06-30",
+		"lastDay": "2019-08-03"
   },
   {
-		"title": "August 2018",
-		"firstDay": "2018-08-05",
-		"lastDay": "2018-09-01"
+		"title": "August 2019",
+		"firstDay": "2019-08-04",
+		"lastDay": "2019-08-31"
   },
   {
-		"title": "September 2018",
-		"firstDay": "2018-09-02",
-		"lastDay": "2018-09-29"
+		"title": "September 2019",
+		"firstDay": "2019-09-01",
+		"lastDay": "2019-09-28"
   }
   ]
